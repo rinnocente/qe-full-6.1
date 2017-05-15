@@ -14,7 +14,7 @@ automatically build on hub.docker.com
   and you will be user qe inside the container
  
   
-2. locally or remotely trugh ssh :
+2. locally or remotely thru ssh :
   ```
   CONT=$(docker run -P -itd rinnocente/qe-6.1)
   PORT=$(docker port "$CONT" |sed -e 's/.*://')
