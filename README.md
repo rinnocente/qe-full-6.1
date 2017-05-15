@@ -7,14 +7,18 @@ automatically build on hub.docker.com
 
 ### Two ways to use it :
 
-1. locally :
+1. locally :    
+  ```
   docker run -it rinnocente/qe-6.1 /bin/bash
   and you will be user qe inside the container
-
+  ```
+  
 2. locally or remotely trugh ssh :
+  ```
   CONT=$(docker run -P -itd rinnocente/qe-6.1)
   PORT=$(docker port "$CONT" |sed -e 's/.*://')
   ssh -p "$PORT" qe@127.0.0.1
+ ```
  
  initial password is *mammamia* , change it 
  immediately with the command **passwd**
