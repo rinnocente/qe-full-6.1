@@ -10,8 +10,9 @@ automatically build on hub.docker.com
 1. locally :    
   ```
   docker run -it rinnocente/qe-6.1 /bin/bash
-  and you will be user qe inside the container
   ```
+  and you will be user qe inside the container
+ 
   
 2. locally or remotely trugh ssh :
   ```
