@@ -10,13 +10,13 @@ ENV  QE_HD="/home/qe"  \
 	QE_VER="-6.1"
 
 
-# we create the user 'gromed' and add it to the list of sudoers
+# we create the user 'qe' and add it to the list of sudoers
 RUN  adduser -q --disabled-password --gecos qe qe          \
-	&& echo "\nqe ALL=(ALL:ALL) NOPASSWD:ALL" >>/etc/sudoers.d/gromed  \
+	&& echo "\nqe ALL=(ALL:ALL) NOPASSWD:ALL" >>/etc/sudoers.d/qe \
 	&& (echo "qe:mammamia"|chpasswd) \
 	# to avoid that ubuntu openblas tries to use multithreading that conflicts with mpi
 	&& echo "export OMP_NUM_THREADS=1" >>/home/qe/.bashrc \
-# we add /home/qe to the PATH of user 'qe'
+# we add /home/qe/qe${QE_VER}/bin to the PATH of user 'qe'
 	&& echo "export PATH=/home/qe/qe${QE_VER}/bin:${PATH}" >>/home/qe/.bashrc 
 #
 
@@ -29,7 +29,9 @@ RUN wget http://qe-forge.org/gf/download/frsrelease/240/1075/qe${QE_VER}.tar.gz 
 	&& tar xzf qe${QE_VER}.tar.gz  
 RUN 	(cd qe${QE_VER} ; \
 		./configure ; \
-		make all ) 
+		make all ; \
+		tar xzf ../qe${QE_VER}-test-suite.tar.gz ; \
+		tar xzf ../qe${QE_VER}-examples.tar.gz  ) 
 
 RUN chown -R qe:qe ${QE_HD}
 
