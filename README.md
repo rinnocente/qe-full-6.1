@@ -1,5 +1,5 @@
-# qe 6.1
-Q[uantum]E[spresso] 6.1 
+# quantum espresso  6.1
+Quantum Espresso 6.1 
 
 all sources, all binaries
 
