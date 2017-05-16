@@ -35,7 +35,7 @@ RUN 	\
 		tar xzf ../qe"${QE_VER}"-examples.tar.gz  ) 
 RUN	\
 	mkdir -p downloads \
-	mv  qe"${QE_VER}".tar.gz  qe"${QE_VER}"-test-suite.tar.gz  qe"${QE_VER}"-examples.tar.gz downloads/
+	&& mv  qe"${QE_VER}".tar.gz  qe"${QE_VER}"-test-suite.tar.gz  qe"${QE_VER}"-examples.tar.gz downloads/
 #
 RUN 	\
 	chown -R qe:qe "${QE_HD}"
