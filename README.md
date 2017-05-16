@@ -1,9 +1,12 @@
 # quantum espresso  6.1
 Quantum Espresso 6.1 
 
+Quantum Espresso is a well known package for electronic structure computations,
+more info at [quantum espresso site](http://quantum-espresso.org).
+
 all sources, all binaries
 
-automatically build on hub.docker.com
+at every push on github a new image is automatically build on hub.docker.com
 
 ### Two ways to use it :
 
