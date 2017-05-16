@@ -12,14 +12,14 @@ at every push on github a new image is automatically build on hub.docker.com
 
 1. locally :    
   ```
-  docker run -it rinnocente/qe-6.1 /bin/bash
+  docker run -it rinnocente/qe-full-6.1 /bin/bash
   ```
   and you will be user qe inside the container
  
   
 2. locally or remotely thru ssh :
   ```
-  CONT=$(docker run -P -itd rinnocente/qe-6.1)
+  CONT=$(docker run -P -itd rinnocente/qe-full-6.1)
   PORT=$(docker port "$CONT" |sed -e 's/.*://')
   ssh -p "$PORT" qe@127.0.0.1
  ```
